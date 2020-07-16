@@ -1,0 +1,40 @@
+---
+ - hosts: localhost
+  
+   tasks:
+    - name: Create a VM in esxi 
+      vsphere_guest:
+        vcenter_hostname: 192.168.128.218 # ip address of hypervisor
+        esxi:
+          datacenter: ha-datacenter
+          hostname: localhost.localdomain # name shown in hypervisor console
+        username: root
+        password: r3dh4t1!
+        validate_certs: false
+        state: powered_on
+        vm_extra_config:
+          vcpu.hotadd: yes
+          mem.hotadd:  yes
+          notes: This is a test VM
+        guest: testvm1
+        vm_disk:
+          disk1:
+            size_gb: 10
+            type: thin
+            datastore: datastore2
+        vm_hardware:
+          memory_mb: 512
+          num_cpus: 2
+          scsi: paravirtual
+          osid: coreos64Guest
+          vm_cdrom:
+            type: "iso"
+            iso_path: "datastore2/iso/rhcos-4.5.0-0.nightly-2020-03-18-115438-x86_64-installer.x86_64.iso"
+        vm_nic:
+          nic1:
+            type: vmxnet3
+            network: Openshift
+            network_type: standard
+      delegate_to: localhost
+      register: deploy_vm
+

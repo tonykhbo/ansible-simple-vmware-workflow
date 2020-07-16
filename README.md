@@ -1,1 +1,2 @@
-# ansible-simple-vmware-workflow
+# ansible-sudoscanner
+for demonstrating role usage in tower
