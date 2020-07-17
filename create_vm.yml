@@ -10,5 +10,5 @@
          validate_certs: no
          power_on: yes
          name: "{{ vm_name }}"
-       delegate_to: {{ hostname }}
+       delegate_to: "{{ hostname }}"
 
