@@ -1,12 +1,14 @@
 ---
 - hosts: localhost
-
   tasks:
     - name: Gather vmware host facts
       vmware_host_facts:
-        hostname: 192.168.128.218
-        username: root
-        password: r3dh4t1!
-        validate_certs: false
+        hostname: "{{ hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: no
       register: host_facts
       delegate_to: localhost
+
+    - debug:
+        var: host_facts
