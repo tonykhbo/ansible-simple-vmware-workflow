@@ -1,5 +1,6 @@
 ---
-  - vars_files:
+  - hosts: localhost
+    vars_files:
     - vars.yml
     tasks:
     - vmware_deploy_ovf:
