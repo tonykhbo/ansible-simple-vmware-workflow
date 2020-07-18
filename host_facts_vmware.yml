@@ -3,10 +3,9 @@
   tasks:
     - name: Gather vmware host facts from vCenter
       vmware_host_facts:
-        hostname: "{{ vcenter_server }}"
-        username: "{{ vcenter_user }}"
-        password: "{{ vcenter_pass }}"
-        esxi_hostname: "{{ esxi_hostname }}"
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
       register: host_facts
       delegate_to: localhost
 
