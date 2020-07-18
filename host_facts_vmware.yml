@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  include_vars: vars.yml
   tasks:
     - name: Gather vmware host facts from vCenter
       vmware_host_facts:
