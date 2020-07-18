@@ -1,13 +1,13 @@
 all:
     hosts: 
-        ansible-centos:
+        esxi:
             ansible_host: 192.168.128.198
             ansible_user: tobo
             ansible_ssh_pass: r3dh4t1!
     vars:
-        hostname: 192.168.128.218
-        username: root
-        password: r3dh4t1!
+        VMWARE_HOST: 192.168.128.218
+        VMWARE_USER: root
+        VMWARE_PASS: r3dh4t1!
         vm_name: centos_7_ovf
         ovf_location: /vmfs/volumes/datastore2/templates/CentOS_7.7.1908_VMware_Minimal_Installation_Image_LinuxVMImages.ovf
 

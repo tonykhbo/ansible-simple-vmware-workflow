@@ -1,12 +1,12 @@
 ---
 - hosts: localhost
   tasks:
-    - name: Gather vmware host facts
+    - name: Gather vmware host facts from vCenter
       vmware_host_facts:
-        hostname: "{{ hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        validate_certs: no
+        hostname: "{{ vcenter_server }}"
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
+        esxi_hostname: "{{ esxi_hostname }}"
       register: host_facts
       delegate_to: localhost
 

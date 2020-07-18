@@ -1,5 +1,7 @@
 ---
   - hosts: localhost
+    vars_files:
+     - vars/vars.yaml
     tasks:
      - vmware_deploy_ovf:
          hostname: "{{ hostname }}"
