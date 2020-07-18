@@ -1,16 +1,17 @@
 ---
   - hosts: localhost
     vars_files:
-     - vars.yaml
+    - vars.yaml
     tasks:
-     - vmware_deploy_ovf:
-      hostname: "{{ esxi_hostname }}"
-      username: "{{ vcenter_username }}"
-      password: "{{ vcenter_password }}"
-         ovf: "{{ ovf_location }}"
-         wait_for_ip_address: true
-         validate_certs: no
-         power_on: yes
-         name: "{{ vm_name }}"
-       delegate_to: "{{ esxi_hostname }}"
+    - vmware_deploy_ovf:
+        hostname: "{{ esxi_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+          ovf: "{{ ovf_location }}"
+          wait_for_ip_address: true
+          validate_certs: no
+          power_on: yes
+          name: "{{ vm_name }}"
+          wait_for_ip_address: yes
+        delegate_to: "{{ esxi_hostname }}"
 
