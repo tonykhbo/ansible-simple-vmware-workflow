@@ -5,7 +5,7 @@
   tasks:
     - name: Gather vmware host facts from vCenter
       vmware_host_facts:
-        hostname: "{{ vcenter_hostname }}"
+        hostname: "{{ esxi_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         validate_certs: no
