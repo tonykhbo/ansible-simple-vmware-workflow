@@ -18,4 +18,11 @@
     
     - debug:
         var: info.instance.ipv4
+    
+    - name: Artifact IP of VM to Tower Workflow
+      set_stats:
+        data:
+          ansible_host: "{{ info.instance.ipv4 | ipaddr }}"
+          
+
 
