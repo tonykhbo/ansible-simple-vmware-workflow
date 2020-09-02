@@ -13,6 +13,7 @@
         power_on: yes
         name: "{{ vm_name }}"
         wait_for_ip_address: yes
+        datastore: vsanDatastore
       delegate_to: "{{ esxi_hostname }}"
       register: info
     
